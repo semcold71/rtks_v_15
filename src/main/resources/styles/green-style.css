@@ -1,0 +1,40 @@
+@font-face {
+    -fx-font-family: 'Roboto';
+    src: url('fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+    -fx-font-family: 'Roboto Condensed';
+    src: url('fonts/RobotoCondensed-Regular.ttf');
+}
+
+@font-face {
+    -fx-font-family: 'Oswald';
+    src: url('fonts/Oswald-Regular.ttf');
+}
+
+
+.root {
+    -fx-base: #3C3F41;
+    -fx-background: #3C3F41;
+    -fx-font-size: 14;
+    -fx-font-family: 'Roboto', 'sans-serif';
+    -fx-font-weight: 400;
+}
+
+.anchor-pane {
+    -fx-background-color: #3C3F41;
+}
+
+.button, .toggle-button {
+    -fx-background-color: #5CBB57;
+    -fx-border-color: #416E48;
+    -fx-text-fill: #FFFFFF;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-pref-height: 36;
+    -fx-min-width: 100;
+}
+.button:hover, .toggle-button:hover {
+    -fx-background-color: #5CF40E;
+}

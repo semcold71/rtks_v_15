@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="anchoeRoot" prefHeight="670.0" prefWidth="1172.0" styleClass="anchor-pane" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.samcold.rtks.controllers.statement.StatementDetailController">
+    <children>
+          <Label styleClass="title-label" text="Заявление в РТН" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+          <HBox AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="46.0">
+              <children>
+                  <FlowPane hgap="10.0" prefHeight="30.0" prefWidth="248.0">
+                      <children>
+                          <Label text="от" />
+                          <DatePicker fx:id="statementDate_dp" editable="false" />
+                      </children>
+                  </FlowPane>
+                  <FlowPane hgap="10.0">
+                      <children>
+                          <Label text="№" />
+                          <TextField fx:id="statementNumber_tf" />
+                      </children>
+                  </FlowPane>
+              </children>
+          </HBox>
+        <ButtonBar layoutX="141.0" layoutY="789.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <buttons>
+                <Button fx:id="save_btn" mnemonicParsing="false" text="Сохранить" />
+                <Button fx:id="cancel_btn" mnemonicParsing="false" text="Отмена" />
+            </buttons>
+        </ButtonBar>
+      <Accordion AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+         <panes>
+            <TitledPane expanded="false" text="Основное">
+               <content>
+                  <AnchorPane>
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                                    <Label text="Заказчик">
+                                 <VBox.margin>
+                                    <Insets bottom="4.0" />
+                                 </VBox.margin>
+                              </Label>
+                                      <ComboBox fx:id="customer_cbo" prefWidth="1120.0" />
+                                    <Label text="Подъемное сооружение">
+                                 <VBox.margin>
+                                    <Insets bottom="4.0" top="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                                      <ComboBox fx:id="crane_cbo" prefWidth="1120.0" />
+                                    <GridPane hgap="10.0">
+                                        <columnConstraints>
+                                            <ColumnConstraints hgrow="ALWAYS" maxWidth="933.0" minWidth="10.0" prefWidth="108.0" />
+                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1023.9999847412109" minWidth="10.0" prefWidth="1002.0" />
+                                        </columnConstraints>
+                                        <rowConstraints>
+                                            <RowConstraints minHeight="60.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                                        </rowConstraints>
+                                        <children>
+                                            <Label text="Назначение ПС" GridPane.valignment="TOP">
+                                                <GridPane.margin>
+                                                    <Insets top="6.0" />
+                                                </GridPane.margin>
+                                            </Label>
+                                            <TextArea fx:id="cranePurpose_ta" prefHeight="200.0" prefWidth="200.0" text="предназначен для погрузочно-разгрузочных работ" wrapText="true" GridPane.columnIndex="1" />
+                                        </children>
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                                    </GridPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+                <TitledPane expanded="false" text="Заключение ЭПБ">
+                    <content>
+                        <VBox>
+                            <children>
+                                <GridPane hgap="20.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Label text="Рег. номер" />
+                                        <TextField fx:id="reportNumber_tf" GridPane.rowIndex="1" />
+                                        <Label text="Дата подписания" GridPane.columnIndex="1" />
+                                        <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                            <children>
+                                                <DatePicker fx:id="reportSignDate_dp" editable="false" prefHeight="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                                            </children>
+                                        </AnchorPane>
+                                        <Label text="Дата следующей ЭПБ" GridPane.columnIndex="2" />
+                                        <AnchorPane GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                            <children>
+                                                <DatePicker fx:id="nextDate_dp" editable="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                                            </children>
+                                        </AnchorPane>
+                                    </children>
+                                </GridPane>
+                                <GridPane hgap="10.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints minWidth="10.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Label text="Выводы" GridPane.valignment="TOP">
+                                            <GridPane.margin>
+                                                <Insets top="6.0" />
+                                            </GridPane.margin>
+                                        </Label>
+                                        <TextArea fx:id="reportConclusion_ta" prefHeight="200.0" prefWidth="200.0" text="Соответствует требованиям промышленной безопасности." wrapText="true" GridPane.columnIndex="1" />
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets top="20.0" />
+                                    </VBox.margin>
+                                </GridPane>
+                            </children>
+                        </VBox>
+                    </content>
+                </TitledPane>
+                <TitledPane expanded="false" text="Опасный производственный объект">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <VBox layoutX="32.0" layoutY="-44.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <GridPane hgap="10.0" vgap="20.0">
+                                            <columnConstraints>
+                                                <ColumnConstraints minWidth="10.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints halignment="RIGHT" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <Label text="Наименование" GridPane.valignment="TOP">
+                                                    <GridPane.margin>
+                                                        <Insets top="6.0" />
+                                                    </GridPane.margin>
+                                                </Label>
+                                                <TextArea fx:id="opoName_ta" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="1" GridPane.columnSpan="3" />
+                                                <Label text="Адрес" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                                    <GridPane.margin>
+                                                        <Insets top="6.0" />
+                                                    </GridPane.margin>
+                                                </Label>
+                                                <TextArea fx:id="opoAddress_ta" prefHeight="200.0" prefWidth="200.0" text="&#10;" wrapText="true" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="1" />
+                                                <Label text="Класс опасности" GridPane.rowIndex="2" />
+                                                <TextField fx:id="opoDangerClass_tf" text="IV" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <Label text="Рег. номер" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                                <TextField fx:id="opoRegNumber_tf" text="А-29-" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                            </children>
+                                        </GridPane>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </TitledPane>
+         </panes>
+      </Accordion>
+    </children>
+</AnchorPane>

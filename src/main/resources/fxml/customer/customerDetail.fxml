@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="anchorRoot" prefHeight="670.0" prefWidth="1172.0" styleClass="anchor-pane" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.samcold.rtks.controllers.customer.CustomerDetailController">
+    <children>
+        <Label styleClass="title-label" text="Заказчик (редактирование)" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+        <Accordion AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="48.0">
+            <panes>
+                <TitledPane expanded="false" text="Наименование">
+                    <content>
+                        <VBox>
+                            <children>
+                                <HBox>
+                                    <VBox.margin>
+                                        <Insets bottom="4.0" />
+                                    </VBox.margin>
+                                    <children>
+                                        <Label text="Сокращенное наименование" />
+                                    </children>
+                                </HBox>
+                                <TextField fx:id="name_tf" />
+                                <HBox spacing="10.0">
+                                    <VBox.margin>
+                                        <Insets bottom="4.0" top="14.0" />
+                                    </VBox.margin>
+                                    <children>
+                                        <Label text="Полное наименование" />
+                                        <Button id="hyper-link-button" fx:id="equalName_btn" mnemonicParsing="false" text="совпадает" />
+                                    </children>
+                                </HBox>
+                                <TextField fx:id="name2_tf" />
+                            </children>
+                        </VBox>
+                    </content>
+                </TitledPane>
+                <TitledPane expanded="false" text="Адрес">
+                    <content>
+                        <VBox>
+                            <children>
+                                <HBox>
+                                    <VBox.margin>
+                                        <Insets bottom="4.0" />
+                                    </VBox.margin>
+                                    <children>
+                                        <Label text="Юридическиий адрес" />
+                                    </children>
+                                </HBox>
+                                <TextField fx:id="address_tf" />
+                                <HBox spacing="10.0">
+                                    <VBox.margin>
+                                        <Insets bottom="4.0" top="14.0" />
+                                    </VBox.margin>
+                                    <children>
+                                        <Label text="Почтовый или фактический адрес" />
+                                        <Button id="hyper-link-button" fx:id="equalAddress_btn" mnemonicParsing="false" text="совпадает" />
+                                    </children>
+                                </HBox>
+                                <TextField fx:id="address2_tf" />
+                            </children>
+                        </VBox>
+                    </content>
+                </TitledPane>
+                <TitledPane fx:id="recvizit_tp" expanded="false" text="Реквизиты">
+                    <content>
+                        <AnchorPane fx:id="recvizit_ap">
+                            <children>
+                                <VBox layoutX="22.2" layoutY="22.2" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <GridPane hgap="10.0" vgap="2.0">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <Label text="ИНН" />
+                                                <Label text="ОГРН" GridPane.columnIndex="2" />
+                                                <Label text="КПП" GridPane.columnIndex="1" />
+                                                <TextField fx:id="inn_tf" GridPane.rowIndex="1" />
+                                                <TextField fx:id="kpp_tf" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <TextField fx:id="ogrn_tf" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                            </children>
+                                        </GridPane>
+                                        <GridPane hgap="10.0" vgap="2.0">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <Label text="Р.счет" />
+                                                <Label text="К.счет" GridPane.columnIndex="1" />
+                                                <TextField fx:id="rs_tf" GridPane.rowIndex="1" />
+                                                <TextField fx:id="ks_tf" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                            </children>
+                                        </GridPane>
+                                        <GridPane hgap="10.0" vgap="2.0">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="987.0" minWidth="10.0" prefWidth="987.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="473.0" minWidth="10.0" prefWidth="123.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <Label text="Банк" />
+                                                <Label text="БИК" GridPane.columnIndex="1" />
+                                                <TextField fx:id="bank_tf" GridPane.rowIndex="1" />
+                                                <TextField fx:id="bik_tf" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                            </children>
+                                        </GridPane>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </TitledPane>
+                <TitledPane fx:id="boss_tp" expanded="false" text="Руководитель">
+                    <content>
+                        <AnchorPane fx:id="boss_ap">
+                            <children>
+                                <GridPane hgap="10.0" vgap="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Label text="ФИО" />
+                                        <Label text="Должность" GridPane.columnIndex="1" />
+                                        <TextField fx:id="boss_tf" GridPane.rowIndex="1" />
+                                        <TextField fx:id="post_tf" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    </children>
+                                </GridPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </TitledPane>
+                <TitledPane fx:id="contact_tp" expanded="false" text="Контакты">
+                    <content>
+                        <AnchorPane fx:id="contact_ap">
+                            <children>
+                                <GridPane hgap="10.0" vgap="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Label text="Телефон" />
+                                        <Label text="Факс" GridPane.columnIndex="1" />
+                                        <TextField fx:id="phone_tf" GridPane.rowIndex="1" />
+                                        <TextField fx:id="fax_tf" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                        <Label text="Email" GridPane.columnIndex="2" />
+                                        <Label text="Web" GridPane.columnIndex="3" />
+                                        <TextField fx:id="email_tf" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                        <TextField fx:id="web_tf" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                    </children>
+                                </GridPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </TitledPane>
+                <TitledPane fx:id="note_tp" expanded="false" prefWidth="772.0" text="Примечание">
+                    <content>
+                        <AnchorPane fx:id="note_ap" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TextArea fx:id="note_tf" layoutX="14.0" layoutY="19.0" prefHeight="60.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </TitledPane>
+            </panes>
+        </Accordion>
+        <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="1">
+                    <buttons>
+                        <Button fx:id="save_btn" defaultButton="true" mnemonicParsing="false" text="Сохранить" />
+                        <Button fx:id="cancel_btn" cancelButton="true" mnemonicParsing="false" text="Отмена" />
+                    </buttons>
+                </ButtonBar>
+                <Button fx:id="card_btn" mnemonicParsing="false" text="Карточка предприятия" />
+            </children>
+        </GridPane>
+    </children>
+</AnchorPane>

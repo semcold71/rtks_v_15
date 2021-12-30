@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import org.controlsfx.control.textfield.CustomTextField?>
+
+<AnchorPane prefHeight="670.0" prefWidth="1172.0" styleClass="anchor-pane" stylesheets="@../../styles/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.samcold.rtks.controllers.opo.OpoListController">
+    <children>
+      <GridPane AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+              <CustomTextField fx:id="searchTextField" maxWidth="400.0" prefWidth="400.0" promptText="Поиск" styleClass="search-text-field" />
+         </children>
+      </GridPane>
+        <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="45.0">
+            <columns>
+                <TableColumn fx:id="numColumn" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" resizable="false" text="#" />
+                <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Наименование" />
+                <TableColumn fx:id="addressColumn" prefWidth="75.0" text="Адрес" />
+            <TableColumn fx:id="dangerClassColumn" prefWidth="75.0" styleClass="center-column" text="Класс опасности" />
+            <TableColumn fx:id="regNumberColumn" prefWidth="75.0" text="Рег.№" />
+            <TableColumn fx:id="customerColumn" prefWidth="75.0" text="Владелец" />
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+        </TableView>
+          <ButtonBar prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+              <buttons>
+                  <Button fx:id="addButton" mnemonicParsing="false" text="Новый" />
+                  <Button fx:id="editButton" mnemonicParsing="false" text="Изменить" />
+                  <Button fx:id="deleteButton" mnemonicParsing="false" text="Удалить" />
+              </buttons>
+          </ButtonBar>
+      <ButtonBar layoutX="-424.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="1142.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="500.0">
+        <buttons>
+          <Button fx:id="policyButton" mnemonicParsing="false" text="Стаховой полис" />
+            <Button fx:id="cardButton" mnemonicParsing="false" text="Карта объекта" />
+        </buttons>
+      </ButtonBar>
+    </children>
+</AnchorPane>

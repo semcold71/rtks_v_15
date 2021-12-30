@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane prefHeight="810.0" prefWidth="1200.0" styleClass="anchor-pane" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.samcold.rtks.controllers.MainController">
+    <children>
+      <ImageView fitHeight="67.1" fitWidth="1172.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
+         <image>
+            <Image url="@../images/header.png" />
+         </image>
+      </ImageView>
+        <GridPane layoutX="14.0" layoutY="52.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="92.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="NEVER" maxWidth="837.0" minWidth="10.0" prefWidth="588.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="721.0" minWidth="10.0" prefWidth="584.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                    <children>
+                        <Button fx:id="customersButton" mnemonicParsing="false" prefWidth="100.0" text="Заказчики" />
+                        <Button fx:id="cranesButton" mnemonicParsing="false" prefWidth="100.0" text="Краны" />
+                        <Button fx:id="contractsButton" mnemonicParsing="false" prefWidth="100.0" text="Договора" />
+                        <Button fx:id="statementButton" mnemonicParsing="false" prefWidth="100.0" text="Заявления" />
+                  <Button fx:id="opoButton" mnemonicParsing="false" prefWidth="100.0" text="ОПО и ПК" />
+                    </children>
+                </HBox>
+                <Label fx:id="titleLabel" styleClass="title-label" text="Label" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
+            </children>
+        </GridPane>
+        <AnchorPane fx:id="containerPane" layoutX="14.0" layoutY="117.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="136.0">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="185.0" layoutX="494.0" layoutY="230.0">
+               <image>
+                  <Image url="@../images/big-logo.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+    </children>
+</AnchorPane>

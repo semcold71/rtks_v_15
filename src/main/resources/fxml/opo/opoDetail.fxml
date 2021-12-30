@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="anchorRoot" prefHeight="670.0" prefWidth="1172.0" styleClass="anchor-pane" stylesheets="@../../styles/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.samcold.rtks.controllers.opo.OpoDetailController">
+    <children>
+        <Label style="-fx-text-fill: #5CBB57;" styleClass="title-label" text="Опасный производственный объект (редактирование)" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+        <VBox layoutX="64.0" prefHeight="568.0" prefWidth="1172.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="48.0">
+            <children>
+            <Label text="Владелец ОПО">
+               <VBox.margin>
+                  <Insets bottom="4.0" />
+               </VBox.margin>
+            </Label>
+            <ComboBox fx:id="customerCombo" prefWidth="1172.0" />
+                <Label text="Наименование ОПО (в соответствии со Свидетельством о регистрации)">
+                    <VBox.margin>
+                        <Insets bottom="4.0" top="14.0" />
+                    </VBox.margin>
+                </Label>
+                <TextField fx:id="name_tf" />
+                <Label text="Адрес ОПО (в соответствии с Картой объекта)">
+                    <VBox.margin>
+                        <Insets bottom="4.0" top="14.0" />
+                    </VBox.margin>
+                </Label>
+                <TextField fx:id="address_tf" />
+                <Label text="Класс опасности">
+                    <VBox.margin>
+                        <Insets bottom="4.0" top="14.0" />
+                    </VBox.margin>
+                </Label>
+                <HBox>
+                    <children>
+                        <TextField fx:id="dangerClass_tf" prefWidth="300.0" />
+                    </children>
+                </HBox>
+                <Label text="Регистрационный номер ОПО в реестре РТН">
+                    <VBox.margin>
+                        <Insets bottom="4.0" top="14.0" />
+                    </VBox.margin>
+                </Label>
+                <HBox>
+                    <children>
+                        <TextField fx:id="regNumber_tf" prefWidth="300.0" />
+                    </children>
+                </HBox>
+            <Label text="Примечание">
+               <VBox.margin>
+                  <Insets bottom="4.0" top="14.0" />
+               </VBox.margin>
+            </Label>
+            <TextArea fx:id="note_ta" prefHeight="120.0" prefWidth="200.0" />
+            <GridPane>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="730.0" minWidth="10.0" prefWidth="662.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="515.0" minWidth="10.0" prefWidth="510.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <FlowPane hgap="10.0">
+                     <children>
+                        <Label text="Свидетельство о регистрации ОПО и/или Карта объекта" />
+                        <Label fx:id="opoDocLabel" style="-fx-text-fill: yellow;" text="(не загружено)" />
+                        <Button id="hyper-link-button" fx:id="opoDocButton" mnemonicParsing="false" text="Загрузить" />
+                     </children>
+                  </FlowPane>
+                  <FlowPane hgap="10.0" GridPane.columnIndex="1">
+                     <children>
+                        <Label text="Страховой полис" />
+                        <Label fx:id="policyDocLabel" style="-fx-text-fill: yellow;" text="(не загружено)" />
+                        <Button id="hyper-link-button" fx:id="policyDocButton" mnemonicParsing="false" text="Загрузить" />
+                     </children>
+                  </FlowPane>
+               </children>
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+            </GridPane>
+            </children>
+        </VBox>
+        <ButtonBar prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <buttons>
+                <Button fx:id="save_btn" defaultButton="true" mnemonicParsing="false" text="Сохранить" />
+                <Button fx:id="cancel_btn" cancelButton="true" mnemonicParsing="false" text="Отмена" />
+            </buttons>
+        </ButtonBar>
+    </children>
+</AnchorPane>
