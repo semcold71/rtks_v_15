@@ -1,9 +1,11 @@
 package ru.samcold.rtks.services.statement;
 
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import ru.samcold.rtks.domain.Statement;
 import ru.samcold.rtks.repositories.StatementRepository;
 
+import java.util.Comparator;
 import java.util.Optional;
 
 @Service
@@ -17,7 +19,7 @@ public class StatementServiceImpl implements StatementService {
 
     @Override
     public Iterable<Statement> findAll() {
-        return repository.findAll();
+        return repository.findAll(Sort.by(Sort.Direction.DESC,"statementDate"));
     }
 
     @Override

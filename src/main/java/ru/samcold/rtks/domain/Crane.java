@@ -35,7 +35,7 @@ public class Crane implements Serializable {
     private Customer customer;
 
     @OneToMany(targetEntity = Statement.class, mappedBy = "crane")
-    @OrderBy(Statement_.STATEMENT_DATE)
+    //@OrderBy(Statement_.STATEMENT_DATE)
     private List<Statement> statementList;
 
     @Override
